@@ -1,0 +1,26 @@
+#!/bin/sh
+. /etc/rc.common
+
+StartService ()
+{
+    ConsoleMessage "Running MAC Spoof Script"
+    networksetup -setairportpower en0 on
+    networksetup -setairportpower en1 on
+    /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -z
+    /sbin/ifconfig en0 ether 00:`openssl rand -hex 5 | sed 's/\(..\)/\1:/g; s/.$//'`
+    /sbin/ifconfig en1 ether 00:`openssl rand -hex 5 | sed 's/\(..\)/\1:/g; s/.$//'`
+
+    networksetup -detectnewhardware
+}
+
+StopService ()
+{
+    return 0
+}
+
+RestartService ()
+{
+    return 0
+}
+
+RunService "$1"

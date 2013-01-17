@@ -1,0 +1,6 @@
+{
+    Description      = "MacSpoof";
+    Provides         = ("MacSpoof");
+    Requires         = ("Network", "Disks");
+    OrderPreference  = "None";
+}
