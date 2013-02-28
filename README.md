@@ -6,7 +6,7 @@ To enable startup MacSpoofing you have to follow the instructions listed below
 Startup Installation Instructions :
 
     mkdir -p /tmp/MacSpoof
-    git clone https://github.com/harshavardhana/MacSpoof.git /tmp/MacSpoof
+    git clone git@github.com:Harshavardhana/MacSpoof.git /tmp/MacSpoof
     cd /tmp/MacSpoof
     sudo mkdir /Library/StartupItems/MacSpoof
     sudo cp MacSpoof StartupParameters.plist /Library/StartupItems/MacSpoof
